@@ -3,7 +3,7 @@ import { getNewArrivals } from "@/lib/actions/product.actions";
 
 const HomePage = async () => {
 
-  const newArrivals = getNewArrivals();
+  const newArrivals = await getNewArrivals();
 
   return (<>
 

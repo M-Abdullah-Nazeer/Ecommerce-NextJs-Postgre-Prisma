@@ -20,3 +20,14 @@ export async function getNewArrivals() {
     return convertToPlainObject(data);
 
 }
+
+
+
+
+
+// const plainData = convertToPlainObject(data);
+
+// return plainData.map((product) => ({
+//     ...product,
+//     price: product.price.toString(),
+// }));
