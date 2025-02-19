@@ -1,3 +1,4 @@
+import ProductImages from "@/components/shared/product/product-images";
 import ProductPrice from "@/components/shared/product/product-price";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -21,6 +22,7 @@ const ProductDetailPage = async (props: { params: Promise<{ slug: string }> }) =
 
                 <div className="col-span-2">
                     {/* Images Component */}
+                    <ProductImages images={product.images} productName={product.name} />
                 </div>
                 <div className="col-span-2 p-5">
                     {/* Details Col */}
