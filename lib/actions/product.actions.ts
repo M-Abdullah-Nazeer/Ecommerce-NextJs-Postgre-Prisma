@@ -20,12 +20,12 @@ export async function getNewArrivals() {
 }
 
 
+//  Get single product by its slug
 
+export async function getProductBySlug(slug: string) {
 
+    return await prisma.product.findFirst({
+        where: { slug: slug }
+    })
+}
 
-// const plainData = convertToPlainObject(data);
-
-// return plainData.map((product) => ({
-//     ...product,
-//     price: product.price.toString(),
-// }));
