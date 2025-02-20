@@ -4,6 +4,8 @@ import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import SignInForm from "./sign-in-form";
+import { redirect } from "next/navigation";
+import { auth } from "@/auth";
 
 
 export const metadata: Metadata = {
@@ -12,7 +14,20 @@ export const metadata: Metadata = {
 
 
 
-const SignInPage = () => {
+const SignInPage = async (props: {
+    searchParams: Promise<{
+        callbackUrl: string
+    }>
+}) => {
+
+    const session = await auth();
+
+    const { callbackUrl } = await props.searchParams;
+
+    if (session) {
+        return redirect(callbackUrl || '/')
+    }
+
     return (
         <div className="w-full max-w-md mx-auto">
 
