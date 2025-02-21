@@ -6,6 +6,7 @@ import Link from "next/link";
 
 import { redirect } from "next/navigation";
 import { auth } from "@/auth";
+import SignUpForm from "./sign-up-form";
 
 
 export const metadata: Metadata = {
@@ -54,7 +55,7 @@ const SignUpPage = async (props: {
                 </CardHeader>
                 <CardContent className="space-y-4">
                     {/* FORM COMPONENT IS HERE */}
-
+                    <SignUpForm />
                 </CardContent>
             </Card>
 
